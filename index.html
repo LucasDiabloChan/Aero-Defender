@@ -1,0 +1,159 @@
+<!--
+ - Description: Controle uma nave e desvie dos asteróides
+ - Author: Lucas Mateus
+ - Created at: 08/04/2023
+ - Updated at: --/--/----
+-->
+
+
+<!-- ================================================= -->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Aero Defender </title>
+    
+    <!-- EXTENAL FILES -->
+        <!-- CSS -->
+            <link type="text/css" rel="stylesheet" href="public/styles/main.css">
+            <link type="text/css" rel="stylesheet" href="public/styles/animation_Asteroid.css">
+        
+        <!-- JAVASCRIPT -->
+            <!-- in the final -->
+</head>
+<body>
+    <!-- ========================== -->
+    <!-- MAIN PATTERN -->
+    <!-- ========================== -->
+    <main id="main">
+
+        <!-- ==================== -->
+        <!-- BEGIN OF HEADER PAGE -->
+        <!-- ==================== -->
+            <nav id="nav_header">
+                <div id="options_list-div">
+                    <!-- ============================================ -->
+                    <!-- NAGIGATION BAR: SCORE | TIME | PAUSE | RESET -->
+                    <!-- ============================================ -->
+                    <ul id="options_list">
+
+                        <!-- SCORE -->
+                        <li class="options"> 0000 </li>
+                        
+                        <!-- TIME -->
+                        <li class="options"> 00:00 </li>
+
+                        <!-- PAUSE -->
+                        <li onclick="stopAll()" class="options"> Pause Game </li>
+                        
+                        <!-- RESET -->
+                        <li class="options"> Reset </li>
+                    </ul>
+                </div>
+            </nav>
+        <!-- ================== -->
+        <!-- END OF HEADER PAGE -->
+        <!-- ================== -->
+
+
+        <!-- it's just a division -->
+            <hr id="division">    
+        <!-- it's just a division -->
+            
+
+        <!-- ==================== -->
+        <!-- BEGIN OF GAME WINDOW -->
+        <!-- ==================== -->
+            <section id="game_window-container">
+                <div id="game_window">
+                    <!-- <div class="asteroids asteroids_animation">
+                        <img src="assets/commom_asteroid.png" alt="OLHA A PEDRAAADAAAAAAA!!!!!">
+                    </div> -->
+                    
+                    <div id="susnave-div">
+                        <img id="susnave" src="assets/toUp_NaveAmonSus.png" alt="amogus olhando pra cima garai, tu é cego?">
+                    </div>
+                </div>
+            </section>
+        <!-- ================== -->
+        <!-- END OF GAME WINDOW -->
+        <!-- ================== -->
+        
+
+            
+        <!-- ========================= -->
+        <!-- BEGIN OF: GAME STATISTICS -->
+        <!-- ========================= -->
+            <article id="statistics_info-container">
+                <!-- LIST OF ATRIBUTES -->
+                    <div id="atributes">
+                        <ul class="ul_statistics">
+                            <li> Life: 3</li>
+                            <li> Speed: 1</li>
+                            <li> Strenght: 1</li>
+                        </ul>
+                    </div>
+                
+                <!-- LIST OF OBJECTS -->
+                    <div id="objects">
+                        <ul class="ul_statistics">
+                            <li id="qtdCreated"> </li>
+                            <li> Destroyed: </li>
+                            <li> Avoid: </li>
+                        </ul>
+                    </div>
+
+                <!-- LIST OF POWERS -->
+                    <div id="powers">
+                        <ul class="ul_statistics">
+                            <li> Life Regen: </li>
+                            <li> Shield: </li>
+                            <li> Nuke: </li>
+                        </ul>
+                    </div>
+            </article>
+        <!-- ======================= -->
+        <!-- END OF: GAME STATISTICS -->
+        <!-- ======================= -->
+        
+        <!-- ========================== -->
+        <!-- BEGIN OF: CREDITS / FOOTER -->
+        <!-- ========================== -->
+            <footer id="credits">
+                <!-- ABOUT ME -->
+                    <div id="about_me">
+                        <p> Por enquanto eu que silasqui. </p>
+                    </div>
+                
+                <!-- ABOUT THE GAME -->
+                    <div id="about_game">
+                        <p> Criei esse joguinho, sozinho, em um dia. Apesar de básico, me ajudou a praticar 
+                            a colisão entre objetos e instância dos mesmos. </p>
+                    </div>
+            </footer>
+        <!-- ======================== -->
+        <!-- END OF: CREDITS / FOOTER -->
+        <!-- ======================== -->
+        
+        <!-- ================ -->
+        <!-- JAVASCRIPT LINKS -->
+        <!-- ================ -->
+            <!-- Generate/Destroy Asteroids and Powers -->
+                <script type="text/javascript" src="public/scripts/Objects.js"></script>
+            
+            <!-- Player's Control -->
+                <script type="text/javascript" src="public/scripts/player_controls.js"></script>
+                
+            <!-- Display: Time | Score -->
+                <script type="text/javascript" src="public/scripts/time&score.js"></script>
+                
+            <!-- Display: Statistics -->
+                <script type="text/javascript" src="public/scripts/statistics.js"></script>
+            
+    </main>
+</body>
+</html>

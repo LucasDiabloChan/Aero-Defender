@@ -1,0 +1,17 @@
+/*
+* Description: Animação dos meteoros passando pela tela
+* Author: Lucas Mateus
+* Created at: 09/04/2023
+* Updated at: --/--/----
+*/
+
+/* ANIMAÇÃO DOS ASTEROIDES  40px - 800px: 1x = 5s  */
+@keyframes iiizuuuummmm {
+    0%{
+        top: 60px;
+    }
+
+    100%{
+        top: 500px;
+    }
+}

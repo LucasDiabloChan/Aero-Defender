@@ -1,0 +1,177 @@
+/*
+ - Description: Estilização da página principal do game
+ - Author: Lucas Mateus
+ - Created at: 08/04/2023
+*/
+
+/* ---------------------------- */
+/* 
+--> SEQUENCE: 
+
+- All Elements
+- Body
+- Main
+- 
+
+*/
+
+
+
+/* ====== */
+/* =========================================== */
+/* ====== */
+
+/* ALL ELEMENTS */
+    *{
+        margin: 0;
+        padding: 0;
+        scroll-snap-type: none;
+    }
+
+
+/* ====== */
+/* =========================================== */
+/* ====== */
+
+
+/* BODY */
+    body{
+        background-color: rgb(14, 1, 37);
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+
+/* ====== */
+/* =========================================== */
+/* ====== */
+
+
+/* MAIN */
+    #main{
+        width: 60vw;
+        height: 70vh;
+        background-color: black;
+        border: 4px solid black;
+    }
+
+/* DIVISION */
+    #division{
+        border-color: black;
+        border-width: 2px;
+    }
+
+/* ====== */
+/* =========================================== */
+/* ====== */
+
+/* NAVIGATION BAR */
+    #nav_header{
+        display: flex;
+        color: yellow;
+        background-color: rgb(39, 39, 39);
+
+    }
+
+/* OPTIONS CONTAINER */
+    #options_list-div{
+        display: flex;
+        padding: 10px;
+        width: 100%;
+        height: 100%;
+    }
+
+/* LIST OF OPTIONS */
+    #options_list{
+        width: 100%;
+        height: 100%;
+        list-style-type: none;
+        display: flex;
+        justify-content: space-around;
+    }
+
+/* OPTIONS */
+    .options:hover{
+        text-decoration: underline;
+        color: red;
+    }
+
+    .options:active{
+        text-decoration: none;
+        color: cyan;
+    }
+
+
+/* ===== */
+/* =========================================== */
+/* ===== */
+
+
+/* CONTAINER OF GAME WINDOW */
+    #game_window-container{
+        width: 100%;
+        height: 100%;
+        background-color: hsl(262, 63%, 20%);
+    }
+
+/* GAME WINDOW */
+    #game_window{
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+    }
+
+/* ASTEROIDS */
+    .asteroids{
+        position: ppp;
+        top: -20px;
+    }
+
+/* ASTEROIDS ANIMATION */
+    .asteroids_animation{
+        animation-name: iiizuuuummmm;
+        animation-duration: 6s;
+        animation-timing-function: ease-in;
+        animation-iteration-count: infinite;
+    }
+
+
+/* AMOGUS NAVE */
+    #susnave-div{
+        position: absolute;
+        left: 600px;
+        top: 440px;
+        width: fit-content;
+        height: fit-content;
+    }
+
+/* AMOGUS NAVE */
+    #susnave{
+        width: 60px;
+        height: auto;
+    }
+
+/* ====== */
+/* =========================================== */
+/* ====== */
+
+
+/* Article */
+    #statistics_info-container{
+        background-color: bisque;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+/* Article statistics */
+    .ul_statistics{
+        list-style-type: none;
+    }
+
+
+/* ====== */
+/* =========================================== */
+/* ====== */
