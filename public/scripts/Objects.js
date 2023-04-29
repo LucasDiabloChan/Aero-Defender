@@ -136,8 +136,7 @@ function colision(){
 
         if((elmt_x >= sus_x || elmt_x <= tam_sus_x &&
          //  100  >=  130   ||   100  <=  160
-            sus_x >= elmt_x || sus_x <= tam_elmt_x)){
-        }
+            sus_x >= elmt_x || sus_x <= tam_elmt_x)){}
     });
 }
 
