@@ -19,15 +19,6 @@ var dir_Y = 0;
 var pos_X = SUSNAVE.offsetLeft;
 var pos_Y = SUSNAVE.offsetTop;
 
-
-// test = pos_X.split("p");
-// test2 = test[0];
-// console.log(test);
-
-
-console.log(pos_X);
-console.log(pos_Y);
-
 // Game settings
 var keyboard = null;
 
@@ -38,20 +29,19 @@ var keyboard = null;
 document.addEventListener("keydown", (event) => {pressDown(event)});
 document.addEventListener("keyup", (event) =>{pressUp(event)});
 
-
 // Inicia o movimento
 function pressDown(event){
     
     // PARA: BAIXO // CIMA
     if (event.key == "w" || event.key == "ArrowUp")
         dir_Y = -1;
-    else if (event.key == "s" || event.key == "ArrowDown")
+    if (event.key == "s" || event.key == "ArrowDown")
         dir_Y = 1;
     
     // PARA: BAIXO // CIMA
     if (event.key == "a" || event.key == "ArrowLeft")
         dir_X = -1;
-    else if (event.key == "d" || event.key == "ArrowRight")
+    if (event.key == "d" || event.key == "ArrowRight")
         dir_X = 1;
     
     move();
@@ -62,13 +52,13 @@ function pressUp(event){
     // PARA: BAIXO // CIMA
     if (event.key == "w" || event.key == "ArrowUp")
         dir_Y = 0;
-    else if (event.key == "s" || event.key == "ArrowDown")
+    if (event.key == "s" || event.key == "ArrowDown")
         dir_Y = 0;
     
     // PARA: BAIXO // CIMA
     if (event.key == "a" || event.key == "ArrowLeft")
         dir_X = 0;
-    else if (event.key == "d" || event.key == "ArrowRight")
+    if (event.key == "d" || event.key == "ArrowRight")
         dir_X = 0;
 }
 
