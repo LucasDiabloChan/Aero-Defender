@@ -150,6 +150,7 @@ function colision(){
         // AMOGUSNAVE
         let sus = document.getElementById("susnave-div");
 
+<<<<<<< HEAD
         /* SUSNAVE */
             // Dimensões: X e Y
             let OBJ_AMOGUS = {
@@ -197,7 +198,6 @@ function colision(){
             // Para a geração de asteroids
             stopAll();
         }
-
     });
 }
 
