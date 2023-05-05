@@ -2,7 +2,7 @@
 * Description: Create/Generate asteroids
 * Author: Lucas Mateus
 * Created at: 08/04/2023
-* Updated at: 09/04/2023
+* Updated at: 29/04/2023
 */
 
 // ============================= //
@@ -13,19 +13,28 @@ class Asteroid{
 
     // ======================== //
     /* ATRIBUTOS DOS ASTEROIDES */
-    imgAster;
-    divTag;
-    SPEED;
-    arrayAsteroids = [];
-    gameWindow = document.getElementById("game_window");
-    qtdObjcts = 0;
-    idCreate = 1;
+    imgAster; // Imagem do asteroid
+    divTag; // Div que contêm a img do asteroid
+    SPEED; // Velocidade do asteroid
+    arrayAsteroids = []; // Array com todos os asteroids
+    gameWindow = document.getElementById("game_window"); // Game Container
+    qtdObjcts = 0; // Quantidade de objetos gerados
+    arraySize = 0; // Tamanho do array
+
     // ======================= //
+
+    // ============= //
+    /* GET FUNCTIONS */
+    // ============= //
+    getArraySize(){
+        console.log(this.arrayAsteroids.length);
+        return this.arrayAsteroids.length;
+    }
+
 
     // ============================= //
     /* COMPORTAMENTOS DOS ASTEROIDES */
     // ============================= //
-    
     
     // ---------------------------------- //
     // Gera uma velocidade aleatória
@@ -46,7 +55,7 @@ class Asteroid{
             
             // Gera um tamanho random, entre 30px ~ 70px
                 this.imgAster.style.width = Math.round( 30 + Math.random() * 40) + "px";
-                this.imgAster.style.height = "auto";
+                this.imgAster.style.height = Math.round( 20 + Math.random() * 40) + "px";
         }
     // ---------------------------------------------------------------------- //
     
@@ -85,12 +94,11 @@ class Asteroid{
     // Insere os elementos no game
         insertObj(){
             
-            // Pega o tamanho do array de asteroides
-            let size = this.arrayAsteroids.length;
-
+            // Pega o tamanho do array
+            this.arraySize = this.getArraySize();
 
             // Verifica quantos elementos já existem na tela
-            if (size < 20){
+            if (this.arraySize < 20){
 
                 // Chama o método que cria a img
                 this.createAsteroid();
@@ -102,7 +110,7 @@ class Asteroid{
                 this.divTag.appendChild(this.imgAster);
                 
                 // Adiciona a div na tela
-                this.gameWindow.appendChild(this.arrayAsteroids[size]);
+                this.gameWindow.appendChild(this.arrayAsteroids[this.arraySize]);
 
                 // Aumenta a qtd de elementos criados
                 this.qtdObjcts++;
@@ -113,6 +121,21 @@ class Asteroid{
 
         }
     // ----------------------------------------- //
+    
+
+    // ------------------------ //
+    // Limpa todos os asteroids //
+        clearAsteroids(){
+
+            // Remove todos os asteroids da tela
+            for(let k = 0; k <= this.getArraySize(); k++){
+                // Remove o asteroid
+                this.gameWindow.removeChild(this.arrayAsteroids.shift());
+            };
+
+        }
+    // ------------------------ //
+
 }
 
 
@@ -120,25 +143,61 @@ class Asteroid{
 /* IDENTIFICAÇÃO DE COLISÃO */
 // ======================== //
 function colision(){
-    let sus = document.getElementById("susnave");
-    
+      
+    /* verificação dos elementos */
     aster.arrayAsteroids.forEach(element => {
 
-        let sus_x = sus.offsetLeft; //100
-        let sus_y = sus.offsetTop;
-        let tam_sus_x = sus.style.width + sus_x; //60
-        let tam_sus_y = sus.style.width + sus_y;
-        
-        let elmt_x = element.offsetLeft;//130
-        let elmt_y = element.offsetTop;
-        let tam_elmt_x = element.style.width + sus_y;//30
-        let tam_elmt_y = element.style.width + sus_y;
+        // AMOGUSNAVE
+        let sus = document.getElementById("susnave-div");
 
-        if((elmt_x >= sus_x || elmt_x <= tam_sus_x &&
-         //  100  >=  130   ||   100  <=  160
-            sus_x >= elmt_x || sus_x <= tam_elmt_x)){
-                
+        /* SUSNAVE */
+            // Dimensões: X e Y
+            let OBJ_AMOGUS = {
+                X_originPoint: sus.offsetLeft,
+                X_endPoint: sus.offsetWidth + sus.offsetLeft,
+                Y_originPoint: sus.offsetTop,
+                Y_endPoint: sus.offsetHeight + sus.offsetTop
+            };
+            console.log(OBJ_AMOGUS);
+
+        /* OBJETO */
+            // Dimensões: X e Y
+            let OBJ_ASTEROID = {
+                    X_originPoint: (element.offsetLeft),
+                    X_endPoint: (element.offsetWidth + element.offsetLeft),
+                    Y_originPoint: (element.offsetTop),
+                    Y_endPoint: (element.offsetHeight + element.offsetTop)
+                };
+                console.log(OBJ_ASTEROID);
+
+        // Verifica se o PONTO DE ORIGEM do eixo X do AMOGUS está entre o PONTO DE ORIGEM e TÉRMINO do asteroid 
+        // OU
+        // SE o PONTO DE TÉRMINO do eixo X do AMOGUS está entre o PONTO DE ORIGEM E TÉRMINO do asteroid
+        let xColision = (
+                        OBJ_AMOGUS["X_originPoint"] >= OBJ_ASTEROID["X_originPoint"] 
+                        && OBJ_AMOGUS["X_originPoint"] <= OBJ_ASTEROID["X_endPoint"]
+                        ||
+                        OBJ_AMOGUS["X_endPoint"] >= OBJ_ASTEROID["X_originPoint"] 
+                        && OBJ_AMOGUS["X_endPoint"] <= OBJ_ASTEROID["X_endPoint"]
+                        );
+        
+        // Verifica se o PONTO DE ORIGEM do eixo Y do AMOGUS está entre o PONTO DE ORIGEM e TÉRMINO do asteroid 
+        // OU
+        // SE o PONTO DE TÉRMINO do eixo Y do AMOGUS está entre o PONTO DE ORIGEM E TÉRMINO do asteroid
+        let yColision = (
+                        OBJ_AMOGUS["Y_originPoint"] >= OBJ_ASTEROID["Y_originPoint"] 
+                        && OBJ_AMOGUS["Y_originPoint"] <= OBJ_ASTEROID["Y_endPoint"]
+                        ||
+                        OBJ_AMOGUS["Y_endPoint"] >= OBJ_ASTEROID["Y_originPoint"] 
+                        && OBJ_AMOGUS["Y_endPoint"] <= OBJ_ASTEROID["Y_endPoint"]
+                        );
+
+        /* COLISÕES, PARA TUDO */
+        if(xColision && yColision){
+            // Para a geração de asteroids
+            stopAll();
         }
+
     });
 }
 
@@ -154,9 +213,31 @@ asteroid_Creator = setInterval(() => {
     // console.log(aster.arrayAsteroids);
 }, 1000);
 
+
+/* Verificador de colisão */
 colision_checker = setInterval(() => {colision();}, 20);
 
-function stopAll(){
-    clearInterval(asteroid_Creator);
-};
 
+function pauseGame(){
+    // Remove a animação dos asteroides
+    for(let k = 0; k <= aster.getArraySize(); k++){
+        // A classe cm animação
+        aster.arrayAsteroids[k].style.animation = "none";
+
+        console.log(aster.arrayAsteroids[k]);
+    };
+}
+
+function stopAll(){
+    // Para a geração dos asteroids
+    clearInterval(asteroid_Creator);
+
+    // Para a contagem do tempo
+    clearInterval(clock);
+    
+    // Avisa o cabrunco que ele perdeu
+    document.getElementById("lose").style.display = "block";
+
+    // Limpa a tela
+    aster.clearAsteroids();
+};

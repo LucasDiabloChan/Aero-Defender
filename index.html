@@ -2,7 +2,7 @@
  - Description: Controle uma nave e desvie dos asteróides
  - Author: Lucas Mateus
  - Created at: 08/04/2023
- - Updated at: --/--/----
+ - Updated at: 29/04/2023
 -->
 
 
@@ -27,9 +27,10 @@
 </head>
 <body>
     <!-- ========================== -->
-    <!-- MAIN PATTERN -->
+    <!--         MAIN PATTERN       -->
     <!-- ========================== -->
     <main id="main">
+
 
         <!-- ==================== -->
         <!-- BEGIN OF HEADER PAGE -->
@@ -42,16 +43,16 @@
                     <ul id="options_list">
 
                         <!-- SCORE -->
-                        <li class="options"> 0000 </li>
+                        <li class="options" id="score"> 0000 </li>
                         
                         <!-- TIME -->
-                        <li class="options"> 00:00 </li>
+                        <li class="options" id="time"> 00:00 </li>
 
                         <!-- PAUSE -->
-                        <li onclick="stopAll()" class="options"> Pause Game </li>
+                        <li  class="options" onclick="pauseGame()"> Pause Game </li>
                         
                         <!-- RESET -->
-                        <li class="options"> Reset </li>
+                        <li class="options" onclick="stopAll()"> Reset </li>
                     </ul>
                 </div>
             </nav>
@@ -73,7 +74,7 @@
                     <!-- <div class="asteroids asteroids_animation">
                         <img src="assets/commom_asteroid.png" alt="OLHA A PEDRAAADAAAAAAA!!!!!">
                     </div> -->
-                    
+                    <p id="lose"> PERDEU MANÉ </p>
                     <div id="susnave-div">
                         <img id="susnave" src="assets/toUp_NaveAmonSus.png" alt="amogus olhando pra cima garai, tu é cego?">
                     </div>
@@ -83,7 +84,6 @@
         <!-- END OF GAME WINDOW -->
         <!-- ================== -->
         
-
             
         <!-- ========================= -->
         <!-- BEGIN OF: GAME STATISTICS -->
@@ -120,6 +120,7 @@
         <!-- END OF: GAME STATISTICS -->
         <!-- ======================= -->
         
+
         <!-- ========================== -->
         <!-- BEGIN OF: CREDITS / FOOTER -->
         <!-- ========================== -->
@@ -139,6 +140,7 @@
         <!-- END OF: CREDITS / FOOTER -->
         <!-- ======================== -->
         
+
         <!-- ================ -->
         <!-- JAVASCRIPT LINKS -->
         <!-- ================ -->

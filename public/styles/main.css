@@ -2,6 +2,7 @@
  - Description: Estilização da página principal do game
  - Author: Lucas Mateus
  - Created at: 08/04/2023
+ - Updated at: 29/04/2023
 */
 
 /* ---------------------------- */
@@ -152,6 +153,16 @@
     #susnave{
         width: 60px;
         height: auto;
+    }
+
+
+/* LOSE */
+    #lose{
+        width: 100%;
+        color: darkred;
+        display: none;
+        font-size: 30px;
+        text-align: center;
     }
 
 /* ====== */
