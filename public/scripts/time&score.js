@@ -16,7 +16,7 @@ var seconds = 0;
 clock = setInterval(()=>{
     
     // Calcula o tempo a ser exibido
-    if(seconds == 60){
+    if(seconds == 59){
         seconds = 0;
         minutes++;
     }
