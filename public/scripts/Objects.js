@@ -149,8 +149,7 @@ function colision(){
 
         // AMOGUSNAVE
         let sus = document.getElementById("susnave-div");
-
-<<<<<<< HEAD
+        
         /* SUSNAVE */
             // Dimensões: X e Y
             let OBJ_AMOGUS = {
