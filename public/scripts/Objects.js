@@ -200,9 +200,6 @@ function colision(){
     });
 }
 
-
-
-
 const aster = new Asteroid();
 
 /* LOOP PARA GERAR ASTEROIDES */
