@@ -51,7 +51,7 @@ class Asteroid{
                 this.imgAster = document.createElement("img");
             
             // Define qual imagem a aparecer na tag
-                this.imgAster.src = "./../../assets/commom_asteroid.png";
+                this.imgAster.src = "./assets/commom_asteroid.png";
             
             // Gera um tamanho random, entre 30px ~ 70px
                 this.imgAster.style.width = Math.round( 30 + Math.random() * 40) + "px";
